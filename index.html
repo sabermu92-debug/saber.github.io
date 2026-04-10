@@ -133,14 +133,6 @@
       margin-bottom: 15px;
     }
 
-    .project-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
     /* التواصل */
     .contact-container {
       background: var(--white);
@@ -160,6 +152,7 @@
       border: 1px solid #ddd;
       border-radius: 8px;
       box-sizing: border-box;
+      font-family: inherit;
     }
 
     button {
@@ -171,6 +164,8 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 1rem;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
     button:hover { background: var(--accent-red); }
@@ -194,7 +189,7 @@
       text-decoration: none;
     }
 
-    /* أيقونات التواصل في الفوتر */
+    /* الفوتر */
     footer {
       background: #1a1a1a;
       color: white;
@@ -214,8 +209,6 @@
     }
 
     .social-links a.fb:hover { color: #1877F2; transform: translateY(-3px); }
-    .social-links a.tw:hover { color: #1DA1F2; transform: translateY(-3px); }
-    .social-links a.ln:hover { color: #0077B5; transform: translateY(-3px); }
 
     @media (max-width: 768px) {
       .contact-form { grid-template-columns: 1fr; }
@@ -238,7 +231,6 @@
   <ul>
     <li><a href="#about">من نحن</a></li>
     <li><a href="#services">خدماتنا</a></li>
-    <li><a href="#projects">المشاريع</a></li>
     <li><a href="#contact">تواصل معنا</a></li>
   </ul>
 </nav>
@@ -260,42 +252,35 @@
     <div class="card">
       <i class="fas fa-plug"></i>
       <h3>التمديدات الكهربائية</h3>
-      <p>تنفيذ كافة الأعمال الكهربائية للمشاريع الكبرى.</p>
+      <p>تنفيذ كافة الأعمال الكهربائية للمشاريع الكبرى وتجهيز المحطات.</p>
     </div>
     <div class="card">
       <i class="fas fa-box-open"></i>
       <h3>الاستيراد والتصدير</h3>
-      <p>توريد المعدات والمحاولات الكهربائية الأصلية.</p>
+      <p>توريد المحولات والمعدات الكهربائية بأعلى جودة عالمية.</p>
     </div>
     <div class="card">
       <i class="fas fa-tools"></i>
-      <h3>الصيانة الدورية</h3>
-      <p>فريق فني متخصص للصيانة والخدمات السريعة.</p>
+      <h3>الصيانة</h3>
+      <p>فريق فني متخصص لخدمات الصيانة والوقاية الدورية.</p>
     </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="section-title">
-    <h2>المشاريع</h2>
-  </div>
-  <div class="grid">
-    <div class="card"><img src="https://via.placeholder.com/400x250" class="project-img"><h4>مشروع توريد محولات</h4></div>
-    <div class="card"><img src="https://via.placeholder.com/400x250" class="project-img"><h4>تمديد شبكة أبراج</h4></div>
-    <div class="card"><img src="https://via.placeholder.com/400x250" class="project-img"><h4>صيانة مجمع صناعي</h4></div>
   </div>
 </section>
 
 <section id="contact">
   <div class="section-title">
     <h2>تواصل معنا</h2>
+    <p style="text-align:center">ارسل استفسارك وسنقوم بالرد عليك عبر البريد الإلكتروني</p>
   </div>
   <div class="contact-container">
-    <form class="contact-form" onsubmit="sendMessage(event)">
-      <input type="text" placeholder="الاسم" required>
-      <input type="email" placeholder="البريد الإلكتروني" required>
-      <textarea rows="4" style="grid-column: span 2;" placeholder="رسالتك..." required></textarea>
-      <button type="submit">إرسال</button>
+    <form action="https://formspree.io/f/mqaeavqj" method="POST" class="contact-form">
+      <input type="text" name="الاسم" placeholder="الاسم الكامل" required>
+      <input type="email" name="الايميل" placeholder="بريدك الإلكتروني" required>
+      <textarea name="الرسالة" rows="4" style="grid-column: span 2;" placeholder="اكتب تفاصيل طلبك هنا..." required></textarea>
+      
+      <input type="hidden" name="_to" value="Bussectioneng2021@gmail.com">
+      
+      <button type="submit">إرسال الرسالة للإيميل</button>
     </form>
   </div>
 </section>
@@ -306,26 +291,12 @@
 
 <footer>
   <p>© 2026 جميع الحقوق محفوظة - شركة بس سكشن الهندسية المحدودة</p>
-  
   <div class="social-links">
     <a href="Https://www.facebook.com/wsl.tal2018" target="_blank" class="fb" title="فيسبوك">
       <i class="fab fa-facebook"></i>
     </a>
-    <a href="#" target="_blank" class="tw" title="تويتر">
-      <i class="fab fa-twitter"></i>
-    </a>
-    <a href="#" target="_blank" class="ln" title="لينكد إن">
-      <i class="fab fa-linkedin"></i>
-    </a>
   </div>
 </footer>
-
-<script>
-function sendMessage(e){
-  e.preventDefault();
-  alert("تم استلام رسالتك بنجاح! شكراً لتواصلك مع شركة بس سكشن.");
-}
-</script>
 
 </body>
 </html>
