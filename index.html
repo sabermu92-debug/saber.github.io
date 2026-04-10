@@ -8,38 +8,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
   <style>
-    /* الألوان الأساسية والمتغيرات */
     :root {
       --dark-blue: #0a1931;
       --gold: #ffc93c;
       --white: #ffffff;
-      --light-gray: #f4f7f6;
     }
 
-    /* تطبيق الصورة كخلفية للصفحة بالكامل */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      color: #333;
-      line-height: 1.6;
-      /* تم دمج صورة الكتيب كخلفية لكامل الصفحة */
-      background: url('image_1.png');
+      /* ربط صورة الكتاب كخلفية ثابتة */
+      background: url('1775694529748.jpg') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
-      background-attachment: fixed; /* الخلفية ثابتة أثناء التمرير */
+      line-height: 1.6;
     }
 
-    /* تم إزالة الخلفية المتدرجة والصورة من الـ hero لجعل خلفية الصفحة مرئية */
+    /* طبقة شفافة فوق الخلفية لجعل النص مقروءاً */
+    .overlay {
+      background: rgba(255, 255, 255, 0.85);
+      min-height: 100vh;
+    }
+
     .hero {
-      color: var(--dark-blue); /* تغيير لون النص ليتناسب مع الخلفية الفاتحة */
-      height: 100vh;
+      height: 80vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: none; /* إزالة خلفية الـ hero */
+      padding: 20px;
     }
 
     .logo-box {
@@ -48,34 +46,34 @@
       border-radius: 50%;
       margin-bottom: 20px;
       border: 4px solid var(--gold);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     .logo-box img {
-      width: 100px;
-      height: 100px;
+      width: 120px;
+      height: 120px;
       object-fit: contain;
     }
 
-    .hero h1 { font-size: 3rem; margin: 10px 0; }
-    .hero p { font-size: 1.5rem; color: var(--gold); }
+    .hero h1 { font-size: 3rem; color: var(--dark-blue); margin: 10px 0; }
+    .hero p { font-size: 1.5rem; color: #b71c1c; font-weight: bold; }
 
-    /* أزرار سريعة */
     .btns { margin-top: 30px; }
     .btn {
-      padding: 12px 30px;
+      padding: 12px 35px;
       text-decoration: none;
       border-radius: 25px;
       font-weight: bold;
-      margin: 5px;
+      margin: 10px;
       display: inline-block;
       transition: 0.3s;
     }
     .btn-gold { background: var(--gold); color: var(--dark-blue); }
     .btn-outline { border: 2px solid var(--dark-blue); color: var(--dark-blue); }
-    .btn:hover { transform: scale(1.05); background: white; color: var(--dark-blue); }
+    .btn:hover { transform: scale(1.1); background: var(--dark-blue); color: white; }
 
-    /* الخدمات */
-    .section { padding: 80px 10%; text-align: center; }
+    /* قسم الخدمات بنمط شفاف */
+    .section { padding: 60px 10%; text-align: center; }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -83,45 +81,40 @@
       margin-top: 40px;
     }
     .card {
-      background: rgba(255, 255, 255, 0.9); /* إضافة شفافية خفيفة للبطاقات */
-      padding: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      transition: 0.3s;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border-top: 5px solid var(--dark-blue);
     }
-    .card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--gold); }
-    .card i { font-size: 40px; color: var(--dark-blue); margin-bottom: 20px; }
 
     /* نموذج التواصل */
     .contact-form {
-      max-width: 700px;
+      max-width: 600px;
       margin: 40px auto;
-      background: rgba(255, 255, 255, 0.9); /* إضافة شفافية خفيفة */
-      padding: 40px;
+      background: white;
+      padding: 30px;
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     input, textarea {
       width: 100%;
-      padding: 15px;
+      padding: 12px;
       margin-bottom: 15px;
       border: 1px solid #ddd;
       border-radius: 8px;
-      box-sizing: border-box;
     }
     .submit-btn {
       background: var(--dark-blue);
       color: white;
       border: none;
-      padding: 15px 40px;
+      padding: 15px;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 1.1rem;
       width: 100%;
+      font-weight: bold;
     }
-    .submit-btn:hover { background: var(--gold); color: var(--dark-blue); }
 
-    /* أيقونة الواتساب */
     .whatsapp-float {
       position: fixed;
       bottom: 30px;
@@ -137,76 +130,73 @@
       font-size: 30px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       text-decoration: none;
-      z-index: 1000;
     }
 
     footer {
       background: var(--dark-blue);
       color: white;
-      padding: 40px;
+      padding: 30px;
       text-align: center;
     }
-    .social-icons a { color: white; font-size: 30px; margin: 0 15px; transition: 0.3s; }
-    .social-icons a:hover { color: var(--gold); }
   </style>
 </head>
 <body>
 
+<div class="overlay">
   <div class="hero">
     <div class="logo-box">
-      <img src="https://image.api.uizard.io/api/cdn/2/ae4817a0-9c2b-4566-b48f-3652875f5231.png" alt="شعار بس سكشن">
+      <img src="https://image.api.uizard.io/api/cdn/2/ae4817a0-9c2b-4566-b48f-3652875f5231.png" alt="شعار شركة بس سكشن">
     </div>
     <h1>شركة بس سكشن الهندسية</h1>
-    <p>الجودة والتميز في الحلول الكهربائية</p>
+    <p>حلول متكاملة في المحولات واللوحات الكهربائية</p>
     <div class="btns">
       <a href="#contact" class="btn btn-gold">تواصل معنا</a>
-      <a href="https://wa.me/249912724809" class="btn btn-outline">استشارة سريعة</a>
+      <a href="https://wa.me/249912724809" class="btn btn-outline">واتساب مباشر</a>
     </div>
   </div>
 
-  <div class="section" id="services">
-    <h2>خدماتنا المتخصصة</h2>
+  <div class="section">
+    <h2>خدماتنا</h2>
     <div class="grid">
       <div class="card">
-        <i class="fas fa-bolt"></i>
-        <h3>تركيب المحولات</h3>
-        <p>تركيب وصيانة محولات الجهد العالي والمتوسط بكفاءة عالية.</p>
+        <i class="fas fa-bolt" style="font-size: 40px; color: var(--dark-blue);"></i>
+        <h3>المحولات الكهربائية</h3>
+        <p>توريد وتركيب وصيانة المحولات بكافة السعات.</p>
       </div>
       <div class="card">
-        <i class="fas fa-charging-station"></i>
-        <h3>لوحات التحكم</h3>
-        <p>تصميم وتجميع لوحات التوزيع والتحكم الكهربائي (Control Panels).</p>
+        <i class="fas fa-microchip" style="font-size: 40px; color: var(--dark-blue);"></i>
+        <h3>اللوحات الكهربائية</h3>
+        <p>تصميم وتجميع لوحات التحكم والتوزيع الرئيسية.</p>
       </div>
       <div class="card">
-        <i class="fas fa-tools"></i>
-        <h3>المقاولات الكهربائية</h3>
-        <p>تنفيذ التمديدات الكهربائية للمشاريع الصناعية والتجارية.</p>
+        <i class="fas fa-tools" style="font-size: 40px; color: var(--dark-blue);"></i>
+        <h3>صيانة وقائية</h3>
+        <p>فريق متخصص لضمان استمرارية العمل بكفاءة عالية.</p>
       </div>
     </div>
   </div>
 
-  <div class="section" id="contact" style="background: rgba(238, 242, 247, 0.9);"> <h2>ارسل لنا استفسارك</h2>
+  <div class="section" id="contact">
     <div class="contact-form">
+      <h3>ارسل لنا طلبك</h3>
       <form action="https://formspree.io/f/mqaeavqj" method="POST">
-        <input type="text" name="name" placeholder="الاسم الكامل" required>
-        <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
-        <textarea name="message" rows="5" placeholder="تفاصيل الطلب..." required></textarea>
+        <input type="text" name="name" placeholder="الاسم" required>
+        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+        <textarea name="message" rows="4" placeholder="تفاصيل الطلب..."></textarea>
         <input type="hidden" name="_to" value="Bussectioneng2021@gmail.com">
-        <button type="submit" class="submit-btn">إرسال الرسالة</button>
+        <button type="submit" class="submit-btn">إرسال الطلب</button>
       </form>
     </div>
   </div>
 
-  <a href="https://wa.me/249912724809" class="whatsapp-float" target="_blank">
+  <a href="https://wa.me/249912724809" class="whatsapp-float">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <footer>
     <p>© 2026 شركة بس سكشن الهندسية المحدودة</p>
-    <div class="social-icons">
-      <a href="Https://www.facebook.com/wsl.tal2018" target="_blank"><i class="fab fa-facebook"></i></a>
-    </div>
   </footer>
+</div>
 
 </body>
  </html>
