@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شركة بس سكشن الهندسية المحدودة</title>
+  <style>
+    body {font-family: Arial; margin:0; background:#f4f6f9;}
+    header {background:linear-gradient(135deg,#0d47a1,#1976d2); color:#fff; padding:30px; text-align:center;}
+    nav {background:#1565c0; padding:12px; text-align:center; position:sticky; top:0;}
+    nav a {color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;}
+    nav a:hover {text-decoration:underline;}
+    section {padding:50px 20px;}
+    .services {display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+    .card {background:#fff; padding:20px; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s;}
+    .card:hover {transform:translateY(-5px);} 
+    .projects img {width:100%; border-radius:10px;}
+    .contact-form {max-width:500px; margin:auto; display:flex; flex-direction:column; gap:10px;}
+    input, textarea {padding:10px; border-radius:8px; border:1px solid #ccc;}
+    button {padding:12px; background:#0d47a1; color:#fff; border:none; border-radius:8px; cursor:pointer;}
+    button:hover {background:#1565c0;}
+    .whatsapp {position:fixed; bottom:20px; left:20px; background:#25D366; color:#fff; padding:15px; border-radius:50%; text-decoration:none; font-size:20px;}
+    footer {background:#0d47a1; color:#fff; text-align:center; padding:20px;}
+  </style>
+</head>
+<body><header>
+  <h1>شركة بس سكشن الهندسية المحدودة</h1>
+  <p>حلول كهربائية متكاملة | استيراد وتصدير</p>
+</header><nav>
+  <a href="#about">من نحن</a>
+  <a href="#services">خدماتنا</a>
+  <a href="#projects">مشاريعنا</a>
+  <a href="#contact">تواصل معنا</a>
+</nav><section id="about">
+  <h2>من نحن</h2>
+  <p>
+    شركة متخصصة في الحلول الكهربائية والاستيراد والتصدير، نقدم خدمات عالية الجودة وفق أحدث المعايير العالمية.
+  </p>
+</section><section id="services">
+  <h2>خدماتنا</h2>
+  <div class="services">
+    <div class="card">
+      <h3>التمديدات الكهربائية</h3>
+      <p>تنفيذ احترافي لجميع المشاريع السكنية والتجارية.</p>
+    </div>
+    <div class="card">
+      <h3>الاستيراد والتصدير</h3>
+      <p>توريد وتصدير المعدات الكهربائية بأفضل الأسعار.</p>
+    </div>
+    <div class="card">
+      <h3>الصيانة</h3>
+      <p>خدمات صيانة سريعة وفعالة.</p>
+    </div>
+  </div>
+</section><section id="projects">
+  <h2>مشاريعنا</h2>
+  <div class="services projects">
+    <div class="card"><img src="https://via.placeholder.com/300"><p>مشروع 1</p></div>
+    <div class="card"><img src="https://via.placeholder.com/300"><p>مشروع 2</p></div>
+    <div class="card"><img src="https://via.placeholder.com/300"><p>مشروع 3</p></div>
+  </div>
+</section><section id="contact">
+  <h2>تواصل معنا</h2>
+  <form class="contact-form" onsubmit="sendMessage(event)">
+    <input type="text" placeholder="الاسم" required>
+    <input type="email" placeholder="البريد الإلكتروني" required>
+    <textarea placeholder="رسالتك" required></textarea>
+    <button type="submit">إرسال</button>
+  </form>
+</section><a class="whatsapp" href="https://wa.me/249XXXXXXXXX" target="_blank">💬</a>
+
+<footer>
+  <p>© 2026 جميع الحقوق محفوظة - شركة بس سكشن</p>
+</footer><script>
+function sendMessage(e){
+  e.preventDefault();
+  alert("تم إرسال الرسالة بنجاح (تحتاج ربطها بسيرفر حقيقي)");
+}
+</script></body>
+</html>
