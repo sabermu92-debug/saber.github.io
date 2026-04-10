@@ -1,95 +1,342 @@
- <!DOCTYPE html><html lang="ar" dir="rtl">
+ <!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>شركة بس سكشن الهندسية المحدودة</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    body {font-family: Arial; margin:0; background:#f4f6f9;}
+    :root {
+      --primary-blue: #0d47a1;
+      --accent-red: #b71c1c;
+      --light-bg: #f8f9fa;
+      --white: #ffffff;
+      --dark-text: #2c3e50;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: var(--light-bg);
+      color: var(--dark-text);
+      line-height: 1.6;
+    }
+
+    /* Header & Logo Section */
     header {
-      background: linear-gradient(135deg,#0d47a1,#1976d2);
-      color: #fff;
-      padding: 30px;
+      background: linear-gradient(135deg, var(--primary-blue), #1e88e5);
+      color: var(--white);
+      padding: 40px 20px;
       text-align: center;
-      display: flex; /* لترتيب الشعار والنص أفقيًا */
-      align-items: center; /* لتوسط العناصر عموديًا */
-      justify-content: center; /* لتوسط العناصر أفقيًا */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    header img { /* تنسيق خاص بصورة الشعار */
-      max-height: 100px; /* تحديد أقصى ارتفاع للشعار، تم تكبيره قليلًا ليناسب هذا الشعار */
-      margin-right: 20px; /* مسافة بين الشعار والنص */
+
+    .logo-container {
+      background: var(--white);
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      border: 3px solid var(--accent-red);
     }
-    nav {background:#1565c0; padding:12px; text-align:center; position:sticky; top:0;}
-    nav a {color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;}
-    nav a:hover {text-decoration:underline;}
-    section {padding:50px 20px;}
-    .services {display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
-    .card {background:#fff; padding:20px; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s;}
-    .card:hover {transform:translateY(-5px);} 
-    .projects img {width:100%; border-radius:10px;}
-    .contact-form {max-width:500px; margin:auto; display:flex; flex-direction:column; gap:10px;}
-    input, textarea {padding:10px; border-radius:8px; border:1px solid #ccc;}
-    button {padding:12px; background:#0d47a1; color:#fff; border:none; border-radius:8px; cursor:pointer;}
-    button:hover {background:#1565c0;}
-    .whatsapp {position:fixed; bottom:20px; left:20px; background:#25D366; color:#fff; padding:15px; border-radius:50%; text-decoration:none; font-size:20px;}
-    footer {background:#0d47a1; color:#fff; text-align:center; padding:20px;}
+
+    .logo-container img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 50%;
+    }
+
+    header h1 {
+      margin: 10px 0;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--white);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: var(--primary-blue);
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: 600;
+      display: block;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--primary-blue);
+      color: var(--white);
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 10% 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: var(--accent-red);
+      display: block;
+      margin: 10px auto;
+    }
+
+    /* Services Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: 0.4s;
+      border-bottom: 5px solid transparent;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent-red);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .card i {
+      font-size: 40px;
+      color: var(--primary-blue);
+      margin-bottom: 20px;
+    }
+
+    /* Projects Section */
+    .project-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    /* Contact Form */
+    .contact-container {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .contact-form textarea {
+      grid-column: span 2;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+
+    button {
+      grid-column: span 2;
+      padding: 15px;
+      background: var(--primary-blue);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: var(--accent-red);
+    }
+
+    /* Floating WhatsApp */
+    .whatsapp {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: 0.3s;
+    }
+
+    .whatsapp:hover { transform: scale(1.1); }
+
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-form { grid-template-columns: 1fr; }
+      .contact-form textarea, button { grid-column: span 1; }
+      nav ul { flex-direction: column; text-align: center; }
+    }
   </style>
 </head>
-<body><header>
-  <img src="https://image.api.uizard.io/api/cdn/2/ae4817a0-9c2b-4566-b48f-3652875f5231.png" alt="شعار شركة بس سكشن">
-  <div>
-    <h1>شركة بس سكشن الهندسية المحدودة</h1>
-    <p>حلول كهربائية متكاملة | استيراد وتصدير</p>
+<body>
+
+<header>
+  <div class="logo-container">
+    <img src="https://image.api.uizard.io/api/cdn/2/ae4817a0-9c2b-4566-b48f-3652875f5231.png" alt="شعار بس سكشن">
   </div>
-</header><nav>
-  <a href="#about">من نحن</a>
-  <a href="#services">خدماتنا</a>
-  <a href="#projects">مشاريعنا</a>
-  <a href="#contact">تواصل معنا</a>
-</nav><section id="about">
-  <h2>من نحن</h2>
-  <p>
-    شركة متخصصة في الحلول الكهربائية والاستيراد والتصدير، نقدم خدمات عالية الجودة وفق أحدث المعايير العالمية.
+  <h1>شركة بس سكشن الهندسية المحدودة</h1>
+  <p><i class="fas fa-bolt"></i> ريادة في الحلول الكهربائية | استيراد وتصدير</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#about">من نحن</a></li>
+    <li><a href="#services">خدماتنا</a></li>
+    <li><a href="#projects">المشاريع</a></li>
+    <li><a href="#contact">تواصل معنا</a></li>
+  </ul>
+</nav>
+
+<section id="about">
+  <div class="section-title">
+    <h2>من نحن</h2>
+  </div>
+  <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.2rem;">
+    نحن في <strong>شركة بس سكشن</strong> نجمع بين الخبرة الهندسية العريقة وأحدث التقنيات العالمية. نلتزم بتقديم حلول كهربائية متكاملة تشمل التصميم، التوريد، والتنفيذ بأعلى معايير السلامة والجودة.
   </p>
-</section><section id="services">
-  <h2>خدماتنا</h2>
-  <div class="services">
+</section>
+
+<section id="services" style="background: #f1f3f5;">
+  <div class="section-title">
+    <h2>خدماتنا المتخصصة</h2>
+  </div>
+  <div class="grid">
     <div class="card">
+      <i class="fas fa-tools"></i>
       <h3>التمديدات الكهربائية</h3>
-      <p>تنفيذ احترافي لجميع المشاريع السكنية والتجارية.</p>
+      <p>تنفيذ البنية التحتية الكهربائية للمصانع، الأبراج السكنية والمجمعات التجارية.</p>
     </div>
     <div class="card">
+      <i class="fas fa-ship"></i>
       <h3>الاستيراد والتصدير</h3>
-      <p>توريد وتصدير المعدات الكهربائية بأفضل الأسعار.</p>
+      <p>توريد أجود أنواع المحولات والكابلات والمعدات من كبرى الشركات العالمية.</p>
     </div>
     <div class="card">
-      <h3>الصيانة</h3>
-      <p>خدمات صيانة سريعة وفعالة.</p>
+      <i class="fas fa-user-shield"></i>
+      <h3>الصيانة والوقاية</h3>
+      <p>عقود صيانة دورية وفحص شامل للأنظمة لضمان استمرارية العمل بأمان.</p>
     </div>
   </div>
-</section><section id="projects">
-  <h2>مشاريعنا</h2>
-  <div class="services projects">
-    <div class="card"><img src="https://via.placeholder.com/300"><p>مشروع 1</p></div>
-    <div class="card"><img src="https://via.placeholder.com/300"><p>مشروع 2</p></div>
-    <div class="card"><img src="https://via.placeholder.com/300"><p>مشروع 3</p></div>
+</section>
+
+<section id="projects">
+  <div class="section-title">
+    <h2>معرض أعمالنا</h2>
   </div>
-</section><section id="contact">
-  <h2>تواصل معنا</h2>
-  <form class="contact-form" onsubmit="sendMessage(event)">
-    <input type="text" placeholder="الاسم" required>
-    <input type="email" placeholder="البريد الإلكتروني" required>
-    <textarea placeholder="رسالتك" required></textarea>
-    <button type="submit">إرسال</button>
-  </form>
-</section><a class="whatsapp" href="https://wa.me/249912724809" target="_blank">💬</a>
+  <div class="grid">
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250" class="project-img">
+      <h4>تجهيز محطة كهرباء فرعية</h4>
+      <p>تم إنجاز المشروع وفق الجدول الزمني المحدد.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250" class="project-img">
+      <h4>توريد كابلات ضغط عالي</h4>
+      <p>توفير شحنات ضخمة من الكابلات المدرعة لمشروع سكني.</p>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250" class="project-img">
+      <h4>نظام طاقة بديلة</h4>
+      <p>تركيب وتشغيل لوحات تحكم ذكية لتوفير الطاقة.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title">
+    <h2>تواصل معنا الآن</h2>
+  </div>
+  <div class="contact-container">
+    <form class="contact-form" onsubmit="sendMessage(event)">
+      <input type="text" placeholder="الاسم الكامل" required>
+      <input type="email" placeholder="البريد الإلكتروني" required>
+      <textarea rows="5" placeholder="تفاصيل طلبك أو استفسارك..." required></textarea>
+      <button type="submit">إرسال الرسالة</button>
+    </form>
+  </div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/249912724809" target="_blank" title="تواصل عبر واتساب">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 <footer>
-  <p>© 2026 جميع الحقوق محفوظة - شركة بس سكشن</p>
-</footer><script>
+  <p>© 2026 شركة بس سكشن الهندسية المحدودة - الجودة والتميز في العمل الهندي</p>
+  <div style="margin-top: 15px; opacity: 0.7;">
+    <i class="fab fa-facebook"></i> &nbsp; <i class="fab fa-linkedin"></i> &nbsp; <i class="fab fa-twitter"></i>
+  </div>
+</footer>
+
+<script>
 function sendMessage(e){
   e.preventDefault();
-  alert("تم إرسال الرسالة بنجاح (تحتاج ربطها بسيرفر حقيقي)");
+  alert("شكرًا لتواصلك مع شركة بس سكشن. سيقوم فريقنا الهندسي بالرد عليك قريباً!");
 }
-</script></body>
-      </html>
-      
+</script>
+
+</body>
+</html>
