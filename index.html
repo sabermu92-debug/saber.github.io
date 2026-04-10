@@ -22,7 +22,7 @@
       line-height: 1.6;
     }
 
-    /* Header & Logo Section */
+    /* الهيدر والشعار */
     header {
       background: linear-gradient(135deg, var(--primary-blue), #1e88e5);
       color: var(--white);
@@ -53,18 +53,11 @@
     header h1 {
       margin: 10px 0;
       font-size: 2.2rem;
-      letter-spacing: 1px;
     }
 
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
-    /* Navigation */
+    /* القائمة العلوية */
     nav {
       background: var(--white);
-      padding: 0;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -84,7 +77,6 @@
       padding: 15px 25px;
       text-decoration: none;
       font-weight: 600;
-      display: block;
       transition: 0.3s;
     }
 
@@ -93,17 +85,16 @@
       color: var(--white);
     }
 
-    /* Sections */
+    /* الأقسام */
     section {
-      padding: 80px 10% 40px;
+      padding: 60px 10%;
       max-width: 1200px;
       margin: auto;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 50px;
-      position: relative;
+      margin-bottom: 40px;
     }
 
     .section-title::after {
@@ -115,68 +106,59 @@
       margin: 10px auto;
     }
 
-    /* Services Grid */
+    /* الشبكة والبطاقات */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
     .card {
       background: var(--white);
-      padding: 30px;
-      border-radius: 20px;
+      padding: 25px;
+      border-radius: 15px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      transition: 0.4s;
-      border-bottom: 5px solid transparent;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: 0.3s;
     }
 
     .card:hover {
       transform: translateY(-10px);
-      border-color: var(--accent-red);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
 
     .card i {
-      font-size: 40px;
+      font-size: 35px;
       color: var(--primary-blue);
-      margin-bottom: 20px;
-    }
-
-    /* Projects Section */
-    .project-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 15px;
       margin-bottom: 15px;
     }
 
-    /* Contact Form */
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* التواصل */
     .contact-container {
       background: var(--white);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      padding: 30px;
+      border-radius: 15px;
     }
 
     .contact-form {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .contact-form textarea {
-      grid-column: span 2;
+      gap: 15px;
     }
 
     input, textarea {
       width: 100%;
-      padding: 15px;
+      padding: 12px;
       border: 1px solid #ddd;
-      border-radius: 10px;
-      font-family: inherit;
+      border-radius: 8px;
       box-sizing: border-box;
     }
 
@@ -186,49 +168,59 @@
       background: var(--primary-blue);
       color: white;
       border: none;
-      border-radius: 10px;
-      font-size: 1.1rem;
+      border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s;
+      font-size: 1rem;
     }
 
-    button:hover {
-      background: var(--accent-red);
-    }
+    button:hover { background: var(--accent-red); }
 
-    /* Floating WhatsApp */
+    /* أيقونة الواتساب العائمة */
     .whatsapp {
       position: fixed;
-      bottom: 30px;
-      left: 30px;
+      bottom: 25px;
+      left: 25px;
       background: #25D366;
       color: white;
-      width: 60px;
-      height: 60px;
+      width: 55px;
+      height: 55px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      font-size: 28px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       z-index: 1000;
-      transition: 0.3s;
+      text-decoration: none;
     }
 
-    .whatsapp:hover { transform: scale(1.1); }
-
+    /* أيقونات التواصل في الفوتر */
     footer {
       background: #1a1a1a;
       color: white;
       text-align: center;
       padding: 40px 20px;
-      margin-top: 50px;
     }
+
+    .social-links { margin-top: 20px; }
+
+    .social-links a {
+      color: white;
+      font-size: 24px;
+      margin: 0 15px;
+      text-decoration: none;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .social-links a.fb:hover { color: #1877F2; transform: translateY(-3px); }
+    .social-links a.tw:hover { color: #1DA1F2; transform: translateY(-3px); }
+    .social-links a.ln:hover { color: #0077B5; transform: translateY(-3px); }
 
     @media (max-width: 768px) {
       .contact-form { grid-template-columns: 1fr; }
-      .contact-form textarea, button { grid-column: span 1; }
-      nav ul { flex-direction: column; text-align: center; }
+      button { grid-column: span 1; }
+      nav ul { flex-direction: column; }
     }
   </style>
 </head>
@@ -255,86 +247,83 @@
   <div class="section-title">
     <h2>من نحن</h2>
   </div>
-  <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.2rem;">
-    نحن في <strong>شركة بس سكشن</strong> نجمع بين الخبرة الهندسية العريقة وأحدث التقنيات العالمية. نلتزم بتقديم حلول كهربائية متكاملة تشمل التصميم، التوريد، والتنفيذ بأعلى معايير السلامة والجودة.
+  <p style="text-align: center; max-width: 800px; margin: auto;">
+    نحن في شركة بس سكشن نلتزم بتقديم أفضل الخدمات الهندسية والكهربائية وفقاً للمواصفات العالمية، مع التركيز على الجودة والدقة في التنفيذ.
   </p>
 </section>
 
-<section id="services" style="background: #f1f3f5;">
+<section id="services" style="background: #eef2f7;">
   <div class="section-title">
-    <h2>خدماتنا المتخصصة</h2>
+    <h2>خدماتنا</h2>
   </div>
   <div class="grid">
     <div class="card">
-      <i class="fas fa-tools"></i>
+      <i class="fas fa-plug"></i>
       <h3>التمديدات الكهربائية</h3>
-      <p>تنفيذ البنية التحتية الكهربائية للمصانع، الأبراج السكنية والمجمعات التجارية.</p>
+      <p>تنفيذ كافة الأعمال الكهربائية للمشاريع الكبرى.</p>
     </div>
     <div class="card">
-      <i class="fas fa-ship"></i>
+      <i class="fas fa-box-open"></i>
       <h3>الاستيراد والتصدير</h3>
-      <p>توريد أجود أنواع المحولات والكابلات والمعدات من كبرى الشركات العالمية.</p>
+      <p>توريد المعدات والمحاولات الكهربائية الأصلية.</p>
     </div>
     <div class="card">
-      <i class="fas fa-user-shield"></i>
-      <h3>الصيانة والوقاية</h3>
-      <p>عقود صيانة دورية وفحص شامل للأنظمة لضمان استمرارية العمل بأمان.</p>
+      <i class="fas fa-tools"></i>
+      <h3>الصيانة الدورية</h3>
+      <p>فريق فني متخصص للصيانة والخدمات السريعة.</p>
     </div>
   </div>
 </section>
 
 <section id="projects">
   <div class="section-title">
-    <h2>معرض أعمالنا</h2>
+    <h2>المشاريع</h2>
   </div>
   <div class="grid">
-    <div class="card">
-      <img src="https://via.placeholder.com/400x250" class="project-img">
-      <h4>تجهيز محطة كهرباء فرعية</h4>
-      <p>تم إنجاز المشروع وفق الجدول الزمني المحدد.</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/400x250" class="project-img">
-      <h4>توريد كابلات ضغط عالي</h4>
-      <p>توفير شحنات ضخمة من الكابلات المدرعة لمشروع سكني.</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/400x250" class="project-img">
-      <h4>نظام طاقة بديلة</h4>
-      <p>تركيب وتشغيل لوحات تحكم ذكية لتوفير الطاقة.</p>
-    </div>
+    <div class="card"><img src="https://via.placeholder.com/400x250" class="project-img"><h4>مشروع توريد محولات</h4></div>
+    <div class="card"><img src="https://via.placeholder.com/400x250" class="project-img"><h4>تمديد شبكة أبراج</h4></div>
+    <div class="card"><img src="https://via.placeholder.com/400x250" class="project-img"><h4>صيانة مجمع صناعي</h4></div>
   </div>
 </section>
 
 <section id="contact">
   <div class="section-title">
-    <h2>تواصل معنا الآن</h2>
+    <h2>تواصل معنا</h2>
   </div>
   <div class="contact-container">
     <form class="contact-form" onsubmit="sendMessage(event)">
-      <input type="text" placeholder="الاسم الكامل" required>
+      <input type="text" placeholder="الاسم" required>
       <input type="email" placeholder="البريد الإلكتروني" required>
-      <textarea rows="5" placeholder="تفاصيل طلبك أو استفسارك..." required></textarea>
-      <button type="submit">إرسال الرسالة</button>
+      <textarea rows="4" style="grid-column: span 2;" placeholder="رسالتك..." required></textarea>
+      <button type="submit">إرسال</button>
     </form>
   </div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/249912724809" target="_blank" title="تواصل عبر واتساب">
+<a class="whatsapp" href="https://wa.me/249912724809" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
 
 <footer>
-  <p>© 2026 شركة بس سكشن الهندسية المحدودة - الجودة والتميز في العمل الهندي</p>
-  <div style="margin-top: 15px; opacity: 0.7;">
-    <i class="fab fa-facebook"></i> &nbsp; <i class="fab fa-linkedin"></i> &nbsp; <i class="fab fa-twitter"></i>
+  <p>© 2026 جميع الحقوق محفوظة - شركة بس سكشن الهندسية المحدودة</p>
+  
+  <div class="social-links">
+    <a href="Https://www.facebook.com/wsl.tal2018" target="_blank" class="fb" title="فيسبوك">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="#" target="_blank" class="tw" title="تويتر">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="#" target="_blank" class="ln" title="لينكد إن">
+      <i class="fab fa-linkedin"></i>
+    </a>
   </div>
 </footer>
 
 <script>
 function sendMessage(e){
   e.preventDefault();
-  alert("شكرًا لتواصلك مع شركة بس سكشن. سيقوم فريقنا الهندسي بالرد عليك قريباً!");
+  alert("تم استلام رسالتك بنجاح! شكراً لتواصلك مع شركة بس سكشن.");
 }
 </script>
 
