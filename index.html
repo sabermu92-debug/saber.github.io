@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
   <style>
-    /* الألوان الأساسية */
+    /* الألوان الأساسية والمتغيرات */
     :root {
       --dark-blue: #0a1931;
       --gold: #ffc93c;
@@ -16,28 +16,30 @@
       --light-gray: #f4f7f6;
     }
 
+    /* تطبيق الصورة كخلفية للصفحة بالكامل */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: var(--light-gray);
       color: #333;
       line-height: 1.6;
-    }
-
-    /* الواجهة الرئيسية (Hero Section) */
-    .hero {
-      background: linear-gradient(rgba(10, 25, 49, 0.9), rgba(10, 25, 49, 0.8)), 
-                  url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80');
+      /* تم دمج صورة الكتيب كخلفية لكامل الصفحة */
+      background: url('image_1.png');
       background-size: cover;
       background-position: center;
+      background-attachment: fixed; /* الخلفية ثابتة أثناء التمرير */
+    }
+
+    /* تم إزالة الخلفية المتدرجة والصورة من الـ hero لجعل خلفية الصفحة مرئية */
+    .hero {
+      color: var(--dark-blue); /* تغيير لون النص ليتناسب مع الخلفية الفاتحة */
       height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: white;
+      background: none; /* إزالة خلفية الـ hero */
     }
 
     .logo-box {
@@ -69,7 +71,7 @@
       transition: 0.3s;
     }
     .btn-gold { background: var(--gold); color: var(--dark-blue); }
-    .btn-outline { border: 2px solid white; color: white; }
+    .btn-outline { border: 2px solid var(--dark-blue); color: var(--dark-blue); }
     .btn:hover { transform: scale(1.05); background: white; color: var(--dark-blue); }
 
     /* الخدمات */
@@ -81,7 +83,7 @@
       margin-top: 40px;
     }
     .card {
-      background: white;
+      background: rgba(255, 255, 255, 0.9); /* إضافة شفافية خفيفة للبطاقات */
       padding: 40px;
       border-radius: 15px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.05);
@@ -94,7 +96,7 @@
     .contact-form {
       max-width: 700px;
       margin: 40px auto;
-      background: white;
+      background: rgba(255, 255, 255, 0.9); /* إضافة شفافية خفيفة */
       padding: 40px;
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -183,8 +185,7 @@
     </div>
   </div>
 
-  <div class="section" id="contact" style="background: #eef2f7;">
-    <h2>ارسل لنا استفسارك</h2>
+  <div class="section" id="contact" style="background: rgba(238, 242, 247, 0.9);"> <h2>ارسل لنا استفسارك</h2>
     <div class="contact-form">
       <form action="https://formspree.io/f/mqaeavqj" method="POST">
         <input type="text" name="name" placeholder="الاسم الكامل" required>
