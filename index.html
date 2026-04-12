@@ -7,7 +7,7 @@
   <meta name="description" content="شركة بس سكشن الهندسية - خدمات كهرباء ومقاولات وتركيب محولات ولوحات تحكم في السودان">
   <meta name="keywords" content="كهرباء, محولات, لوحات تحكم, مقاولات, السودان, بس سكشن">
 
-  <title>شركة بس سكشن الهندسية المحدودة</title>
+  <title data-en="Bus Section Engineering Co. Ltd." data-ar="شركة بس سكشن الهندسية المحدودة">شركة بس سكشن الهندسية المحدودة</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
@@ -63,6 +63,23 @@
     nav a:hover { 
       color: var(--gold); 
       transform: translateY(-2px);
+    }
+
+    /* تنسيق زر اللغة المضاف */
+    .lang-btn {
+      background: var(--gold);
+      color: var(--dark-blue);
+      border: none;
+      padding: 5px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: 'Cairo', sans-serif;
+      font-weight: bold;
+      margin: 0 15px;
+      transition: var(--transition);
+    }
+    .lang-btn:hover {
+      background: var(--white);
     }
 
     .hero {
@@ -188,6 +205,8 @@
     .contact-info { margin-bottom: 40px; }
     .contact-info p { font-size: 1.2rem; margin: 10px 0; }
     .contact i { color: var(--gold); margin-left: 10px; }
+    [dir="ltr"] .contact i { margin-left: 0; margin-right: 10px; } /* تعديل مسافة الأيقونة في الإنجليزي */
+
     .contact a {
       color: var(--dark-blue);
       text-decoration: none;
@@ -203,6 +222,7 @@
       text-align: right;
       align-items: start;
     }
+    [dir="ltr"] .contact-container { text-align: left; }
 
     .contact form { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
     .contact input, .contact textarea {
@@ -278,31 +298,34 @@
 <body>
 
 <nav>
-  <a href="#">الرئيسية</a>
-  <a href="#about">من نحن</a>
-  <a href="#services">الخدمات</a>
-  <a href="#projects">المشاريع</a>
-  <a href="#contact">تواصل</a>
+  <a href="#" class="lang-text" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+  <a href="#about" class="lang-text" data-ar="من نحن" data-en="About Us">من نحن</a>
+  <a href="#services" class="lang-text" data-ar="الخدمات" data-en="Services">الخدمات</a>
+  <a href="#projects" class="lang-text" data-ar="المشاريع" data-en="Projects">المشاريع</a>
+  <a href="#contact" class="lang-text" data-ar="تواصل" data-en="Contact">تواصل</a>
+  <button class="lang-btn" onclick="toggleLanguage()">English</button>
 </nav>
 
 <div class="hero">
    <div class="logo">
     <img src="h.jpg" alt="شعار بس سكشن">
   </div>
-  <h1>شركة بس سكشن الهندسية</h1>
-  <p>التميز الحقيقي في الحلول الكهربائية والمقاولات</p>
+  <h1 class="lang-text" data-ar="شركة بس سكشن الهندسية" data-en="Bus Section Engineering Co.">شركة بس سكشن الهندسية</h1>
+  <p class="lang-text" data-ar="التميز الحقيقي في الحلول الكهربائية والمقاولات" data-en="True Excellence in Electrical Solutions & Contracting">التميز الحقيقي في الحلول الكهربائية والمقاولات</p>
   <div class="btn-group">
-    <a href="#contact" class="btn gold">اطلب استشارة</a>
-    <a href="https://wa.me/249912724809" class="btn outline"><i class="fab fa-whatsapp"></i> واتساب الرسمي</a>
+    <a href="#contact" class="btn gold lang-text" data-ar="اطلب استشارة" data-en="Get Consultation">اطلب استشارة</a>
+    <a href="https://wa.me/249912724809" class="btn outline"><i class="fab fa-whatsapp"></i> <span class="lang-text" data-ar="واتساب الرسمي" data-en="Official WhatsApp">واتساب الرسمي</span></a>
     <a href="Profile.pdf" class="btn outline" download="Profile.pdf">
-      <i class="fas fa-file-pdf"></i> الملف التعريفي للشركة
+      <i class="fas fa-file-pdf"></i> <span class="lang-text" data-ar="الملف التعريفي للشركة" data-en="Company Profile">الملف التعريفي للشركة</span>
     </a>
   </div>
 </div>
 
 <div class="section" id="about">
-  <h2>من نحن</h2>
-  <p class="section-p">
+  <h2 class="lang-text" data-ar="من نحن" data-en="About Us">من نحن</h2>
+  <p class="section-p lang-text" 
+     data-ar="شركة بس سكشن الهندسية المحدودة هي شركة رائدة ومتخصصة في تقديم الحلول الكهربائية المتكاملة، والمقاولات العامة، وأنظمة تحكم الطاقة، بخبرة واسعة وجودة عالمية تلبي طموحات واحتياجات السوق السوداني."
+     data-en="Bus Section Engineering Co. Ltd. is a leading company specialized in providing integrated electrical solutions, general contracting, and power control systems, with extensive experience and international quality meeting the market needs.">
     شركة بس سكشن الهندسية المحدودة هي شركة رائدة ومتخصصة في تقديم الحلول الكهربائية المتكاملة، 
     والمقاولات العامة، وأنظمة تحكم الطاقة، بخبرة واسعة وجودة عالمية تلبي طموحات واحتياجات السوق السوداني.
   </p>
@@ -310,106 +333,94 @@
   <div class="grid">
     <div class="card why-us-card">
         <i class="fas fa-award"></i>
-        <h3>خبرة هندسية عالية</h3>
+        <h3 class="lang-text" data-ar="خبرة هندسية عالية" data-en="High Engineering Expertise">خبرة هندسية عالية</h3>
     </div>
     <div class="card why-us-card">
         <i class="fas fa-history"></i>
-        <h3>التزام تام بالمواعيد</h3>
+        <h3 class="lang-text" data-ar="التزام تام بالمواعيد" data-en="On-Time Delivery">التزام تام بالمواعيد</h3>
     </div>
     <div class="card why-us-card">
         <i class="fas fa-hand-holding-usd"></i>
-        <h3>أسعار مدروسة ومنافسة</h3>
+        <h3 class="lang-text" data-ar="أسعار مدروسة ومنافسة" data-en="Competitive Pricing">أسعار مدروسة ومنافسة</h3>
     </div>
   </div>
 </div>
 
 <div class="section" id="services" style="background-color: var(--white);">
-  <h2>خدماتنا الأساسية</h2>
+  <h2 class="lang-text" data-ar="خدماتنا الأساسية" data-en="Our Services">خدماتنا الأساسية</h2>
   <div class="grid">
     <div class="card">
         <i class="fas fa-bolt"></i>
-        <h3>المحولات الكهربائية</h3>
-        <p>توريد، تركيب، وصيانة كافة أنواع المحولات بقدرات مختلفة.</p>
+        <h3 class="lang-text" data-ar="المحولات الكهربائية" data-en="Electrical Transformers">المحولات الكهربائية</h3>
+        <p class="lang-text" data-ar="توريد، تركيب، وصيانة كافة أنواع المحولات بقدرات مختلفة." data-en="Supply, installation, and maintenance of all types of transformers.">توريد، تركيب، وصيانة كافة أنواع المحولات بقدرات مختلفة.</p>
     </div>
     <div class="card">
         <i class="fas fa-tools"></i>
-        <h3>المقاولات العامة</h3>
-        <p>تنفيذ المشاريع الهندسية والكهربائية للبنى التحتية والمباني.</p>
+        <h3 class="lang-text" data-ar="المقاولات العامة" data-en="General Contracting">المقاولات العامة</h3>
+        <p class="lang-text" data-ar="تنفيذ المشاريع الهندسية والكهربائية للبنى التحتية والمباني." data-en="Execution of engineering and electrical projects for infrastructure.">تنفيذ المشاريع الهندسية والكهربائية للبنى التحتية والمباني.</p>
     </div>
     <div class="card">
         <i class="fas fa-charging-station"></i>
-        <h3>لوحات التحكم ATS</h3>
-        <p>تصميم وتجميع لوحات التوزيع والتحكم والتشغيل الآلي.</p>
+        <h3 class="lang-text" data-ar="لوحات التحكم ATS" data-en="ATS Control Panels">لوحات التحكم ATS</h3>
+        <p class="lang-text" data-ar="تصميم وتجميع لوحات التوزيع والتحكم والتشغيل الآلي." data-en="Design and assembly of distribution and automation control panels.">تصميم وتجميع لوحات التوزيع والتحكم والتشغيل الآلي.</p>
     </div>
     <div class="card">
         <i class="fas fa-coins"></i>
-        <h3>تعدين الذهب</h3>
-        <p>تقديم الحلول الهندسية والكهربائية المتكاملة لدعم عمليات التعدين والإنتاج.</p>
+        <h3 class="lang-text" data-ar="تعدين الذهب" data-en="Gold Mining">تعدين الذهب</h3>
+        <p class="lang-text" data-ar="تقديم الحلول الهندسية والكهربائية المتكاملة لدعم عمليات التعدين والإنتاج." data-en="Integrated engineering solutions to support mining and production.">تقديم الحلول الهندسية والكهربائية المتكاملة لدعم عمليات التعدين والإنتاج.</p>
     </div>
     <div class="card">
         <i class="fas fa-shipping-fast"></i>
-        <h3>الاستيراد والتصدير</h3>
-        <p>تأمين وتوريد المعدات الهندسية والكهربائية الأصلية من كبرى الشركات العالمية.</p>
+        <h3 class="lang-text" data-ar="الاستيراد والتصدير" data-en="Import & Export">الاستيراد والتصدير</h3>
+        <p class="lang-text" data-ar="تأمين وتوريد المعدات الهندسية والكهربائية الأصلية من كبرى الشركات العالمية." data-en="Supply of original electrical equipment from major global companies.">تأمين وتوريد المعدات الهندسية والكهربائية الأصلية من كبرى الشركات العالمية.</p>
     </div>
   </div>
 </div>
 
 <div class="section portfolio" id="projects">
-  <h2>معرض المشاريع</h2>
-
+  <h2 class="lang-text" data-ar="معرض المشاريع" data-en="Our Projects">معرض المشاريع</h2>
   <div class="grid">
-
     <div class="portfolio-item">
         <img src="s1.jpg" alt="مشروع طاقة">
-        <div class="portfolio-overlay">محطة طاقة شمسية</div>
+        <div class="portfolio-overlay lang-text" data-ar="محطة طاقة شمسية" data-en="Solar Power Plant">محطة طاقة شمسية</div>
     </div>
-
     <div class="portfolio-item">
         <img src="2.jpg" alt="مشروع كهرباء">
-        <div class="portfolio-overlay">مشروع كهرباء</div>
+        <div class="portfolio-overlay lang-text" data-ar="مشروع كهرباء" data-en="Electrical Project">مشروع كهرباء</div>
     </div>
-
     <div class="portfolio-item">
         <img src="1.jpg" alt="صيانة محول">
-        <div class="portfolio-overlay">صيانة محولات</div>
+        <div class="portfolio-overlay lang-text" data-ar="صيانة محولات" data-en="Transformer Maintenance">صيانة محولات</div>
     </div>
-
     <div class="portfolio-item">
         <img src="gg.webp" alt="لوحات تحكم">
-        <div class="portfolio-overlay">لوحات تحكم</div>
+        <div class="portfolio-overlay lang-text" data-ar="لوحات تحكم" data-en="Control Panels">لوحات تحكم</div>
     </div>
-
     <div class="portfolio-item">
         <img src="m3.jpg" alt="تركيب لوحات">
-        <div class="portfolio-overlay">لوحات تحكم مركزية</div>
+        <div class="portfolio-overlay lang-text" data-ar="لوحات تحكم مركزية" data-en="Central Control Panels">لوحات تحكم مركزية</div>
     </div>
-
   </div>
 </div>
 
 <div class="section contact" id="contact" style="background-color: var(--white);">
-  <h2>تواصل معنا</h2>
+  <h2 class="lang-text" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h2>
   <div class="contact-container">
     <div>
         <div class="contact-info">
             <p><i class="fas fa-phone-alt"></i> <a href="tel:+249115798781" dir="ltr">+249115798781</a></p>
             <p><i class="fas fa-envelope"></i> <a href="mailto:Bussectioneng2021@gmail.com">Bussectioneng2021@gmail.com</a></p>
-            <p><i class="fas fa-map-marker-alt"></i> الخرطوم - شارع الستين</p>
+            <p><i class="fas fa-map-marker-alt"></i> <span class="lang-text" data-ar="الخرطوم - شارع الستين" data-en="Khartoum - 60th Street">الخرطوم - شارع الستين</span></p>
         </div>
-        
         <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15377.6976214539!2d32.5694246!3d15.5153243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x168e9162484f10e1%3A0x9ff7099f3a687de7!2z2LTYp9ix2Lkg2KfZhNiz2KrZitmG2Iwg2KfZhNiu2LHYt9mI2YU!5e0!3m2!1sar!2ssd!4v1713500000000!5m2!1sar!2ssd" 
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15377.6976214539!2d32.5694246!3d15.5153243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x168e9162484f10e1%3A0x9ff7099f3a687de7!2z2LTYp9ix2Lkg2KfZhNiz2KrZitmG2Iwg2KfZhNiu2LHYt9mI2YU!5e0!3m2!1sar!2ssd!4v1713500000000!5m2!1sar!2ssd" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
-
     <form action="https://formspree.io/f/mqaeavqj" method="POST">
-        <input type="text" name="name" placeholder="الاسم الكامل" required>
-        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-        <textarea name="message" placeholder="تفاصيل الرسالة..." required></textarea>
-        <button type="submit" class="btn-send">إرسال الرسالة</button>
+        <input type="text" name="name" class="lang-input" data-ar="الاسم الكامل" data-en="Full Name" placeholder="الاسم الكامل" required>
+        <input type="email" name="email" class="lang-input" data-ar="البريد الإلكتروني" data-en="Email Address" placeholder="البريد الإلكتروني" required>
+        <textarea name="message" class="lang-input" data-ar="تفاصيل الرسالة..." data-en="Message details..." placeholder="تفاصيل الرسالة..." required></textarea>
+        <button type="submit" class="btn-send lang-text" data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</button>
     </form>
   </div>
 </div>
@@ -419,13 +430,42 @@
 </a>
 
 <footer>
-  <p>© 2026 شركة بس سكشن الهندسية. جميع الحقوق محفوظة.</p>
+  <p class="lang-text" data-ar="© 2026 شركة بس سكشن الهندسية. جميع الحقوق محفوظة." data-en="© 2026 Bus Section Engineering. All rights reserved.">© 2026 شركة بس سكشن الهندسية. جميع الحقوق محفوظة.</p>
   <div class="social-icons">
     <a href="https://www.facebook.com/wsl.tal2018" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
     <a href="https://www.instagram.com/whitestar42?igsh=MWh6MmhuNGU2Y3d2ag==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     <a href="https://x.com/Bussection2021" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
   </div>
 </footer>
+
+<script>
+  function toggleLanguage() {
+    const html = document.documentElement;
+    const isArabic = html.lang === 'ar';
+    const langBtn = document.querySelector('.lang-btn');
+    const langTexts = document.querySelectorAll('.lang-text');
+    const langInputs = document.querySelectorAll('.lang-input');
+    const title = document.querySelector('title');
+
+    if (isArabic) {
+      // تحويل إلى إنجليزي
+      html.lang = 'en';
+      html.dir = 'ltr';
+      langBtn.textContent = 'عربي';
+      title.textContent = title.getAttribute('data-en');
+      langTexts.forEach(el => el.textContent = el.getAttribute('data-en'));
+      langInputs.forEach(el => el.placeholder = el.getAttribute('data-en'));
+    } else {
+      // عودة إلى عربي
+      html.lang = 'ar';
+      html.dir = 'rtl';
+      langBtn.textContent = 'English';
+      title.textContent = title.getAttribute('data-ar');
+      langTexts.forEach(el => el.textContent = el.getAttribute('data-ar'));
+      langInputs.forEach(el => el.placeholder = el.getAttribute('data-ar'));
+    }
+  }
+</script>
 
 </body>
 </html>
