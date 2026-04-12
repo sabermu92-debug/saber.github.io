@@ -72,7 +72,6 @@
       transform: translateY(-2px);
     }
 
-    /* زر تغيير اللغة المضاف */
     .lang-btn {
       background: var(--gold);
       color: var(--dark-blue);
@@ -275,6 +274,28 @@
       transition: var(--transition);
     }
 
+    /* تنسيق زر التلغرام الجديد */
+    .telegram {
+      position:fixed;
+      bottom:90px; /* فوق زر الواتساب */
+      left:20px;
+      background:#0088cc;
+      color:white;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:30px;
+      text-decoration: none;
+      box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .whatsapp:hover, .telegram:hover { transform: scale(1.1); }
+
     footer {
       background: var(--dark-blue);
       color:white;
@@ -435,6 +456,10 @@
   </div>
 </div>
 
+<a href="https://t.me/+966535437440" class="telegram" target="_blank">
+  <i class="fab fa-telegram-plane"></i>
+</a>
+
 <a href="https://wa.me/249912724809" class="whatsapp" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
@@ -476,5 +501,5 @@
 </script>
 
 </body>
-                                            </html>
-                                            
+ </html>
+                                                            
