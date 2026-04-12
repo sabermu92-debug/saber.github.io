@@ -115,6 +115,9 @@
       font-weight: bold;
       transition: var(--transition);
       font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
     .gold { background: var(--gold); color:var(--dark-blue); border: 2px solid var(--gold); }
     .gold:hover { background: transparent; color: var(--gold); }
@@ -255,46 +258,26 @@
     .map-container { border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; min-height: 400px; }
     .map-container iframe { border: 0; width: 100%; height: 100%; }
 
-    .whatsapp {
-      position:fixed;
-      bottom:20px;
-      left:20px;
-      background:#25d366;
-      color:white;
-      width:60px;
-      height:60px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:30px;
+    .floating-btn {
+      position: fixed;
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
       text-decoration: none;
+      color: white;
       box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
       z-index: 1000;
       transition: var(--transition);
     }
 
-    /* تنسيق زر التلغرام الجديد */
-    .telegram {
-      position:fixed;
-      bottom:90px; /* فوق زر الواتساب */
-      left:20px;
-      background:#0088cc;
-      color:white;
-      width:60px;
-      height:60px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:30px;
-      text-decoration: none;
-      box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
-      z-index: 1000;
-      transition: var(--transition);
-    }
-
-    .whatsapp:hover, .telegram:hover { transform: scale(1.1); }
+    .whatsapp { bottom: 20px; background: #25d366; }
+    .telegram { bottom: 90px; background: #0088cc; }
+    .floating-btn:hover { transform: scale(1.1); }
 
     footer {
       background: var(--dark-blue);
@@ -337,11 +320,16 @@
   </div>
   <h1 class="lang-text" data-ar="شركة بس سكشن الهندسية" data-en="Bus Section Engineering">شركة بس سكشن الهندسية</h1>
   <p class="lang-text" data-ar="التميز الحقيقي في الحلول الكهربائية والمقاولات" data-en="True Excellence in Electrical Solutions & Contracting">التميز الحقيقي في الحلول الكهربائية والمقاولات</p>
+  
   <div class="btn-group">
-    <a href="#contact" class="btn gold lang-text" data-ar="اطلب استشارة" data-en="Get a Consultation">اطلب استشارة</a>
-    <a href="https://wa.me/249912724809" class="btn outline"><i class="fab fa-whatsapp"></i> <span class="lang-text" data-ar="واتساب الرسمي" data-en="Official WhatsApp">واتساب الرسمي</span></a>
+    <a href="#contact" class="btn gold lang-text" data-ar="اطلب عرض سعر" data-en="Request Quote">
+      <i class="fas fa-file-invoice-dollar"></i> اطلب عرض سعر
+    </a>
+    <a href="Profile.pdf" target="_blank" class="btn outline lang-text" data-ar="عرض الكتيب التعريفي" data-en="View Booklet">
+      <i class="fas fa-book-open"></i> عرض الكتيب التعريفي
+    </a>
     <a href="Profile.pdf" class="btn outline" download="Profile.pdf">
-      <i class="fas fa-file-pdf"></i> <span class="lang-text" data-ar="الملف التعريفي للشركة" data-en="Company Profile">الملف التعريفي للشركة</span>
+      <i class="fas fa-file-pdf"></i> <span class="lang-text" data-ar="تحميل ملف الشركة" data-en="Download Profile">تحميل ملف الشركة</span>
     </a>
   </div>
 </div>
@@ -407,23 +395,23 @@
 
   <div class="grid">
     <div class="portfolio-item">
-        <img src="s1.jpg" alt="محطة طاقة شمسية - شركة بس سكشن" loading="lazy">
+        <img src="s1.jpg" alt="محطة طاقة شمسية" loading="lazy">
         <div class="portfolio-overlay lang-text" data-ar="محطة طاقة شمسية" data-en="Solar Power Plant">محطة طاقة شمسية</div>
     </div>
     <div class="portfolio-item">
-        <img src="2.jpg" alt="مشروع تركيبات كهربائية" loading="lazy">
+        <img src="2.jpg" alt="مشروع كهرباء" loading="lazy">
         <div class="portfolio-overlay lang-text" data-ar="مشروع كهرباء" data-en="Electrical Project">مشروع كهرباء</div>
     </div>
     <div class="portfolio-item">
-        <img src="1.jpg" alt="صيانة محولات كهربائية السودان" loading="lazy">
+        <img src="1.jpg" alt="صيانة محولات" loading="lazy">
         <div class="portfolio-overlay lang-text" data-ar="صيانة محولات" data-en="Transformers Maintenance">صيانة محولات</div>
     </div>
     <div class="portfolio-item">
-        <img src="gg.webp" alt="لوحات تحكم ATS هندسية" loading="lazy">
+        <img src="gg.webp" alt="لوحات تحكم" loading="lazy">
         <div class="portfolio-overlay lang-text" data-ar="لوحات تحكم" data-en="Control Panels">لوحات تحكم</div>
     </div>
     <div class="portfolio-item">
-        <img src="m3.jpg" alt="تركيب لوحات تحكم مركزية" loading="lazy">
+        <img src="m3.jpg" alt="لوحات مركزية" loading="lazy">
         <div class="portfolio-overlay lang-text" data-ar="لوحات تحكم مركزية" data-en="Central Control Panels">لوحات تحكم مركزية</div>
     </div>
   </div>
@@ -440,10 +428,7 @@
         </div>
         
         <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.257047712431!2d32.5714!3d15.5645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTV0MzMnNTIuMiJOIDMywrAzNCcxNy4wIkU!5e0!3m2!1sen!2ssd!4v1640000000000" 
-                allowfullscreen="" loading="lazy">
-            </iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.257047712431!2d32.5714!3d15.5645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTV0MzMnNTIuMiJOIDMywrAzNCcxNy4wIkU!5e0!3m2!1sen!2ssd!4v1640000000000" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
 
@@ -456,11 +441,11 @@
   </div>
 </div>
 
-<a href="https://t.me/+966535437440" class="telegram" target="_blank">
+<a href="https://t.me/+966535437440" class="floating-btn telegram" target="_blank">
   <i class="fab fa-telegram-plane"></i>
 </a>
 
-<a href="https://wa.me/249912724809" class="whatsapp" target="_blank">
+<a href="https://wa.me/249912724809" class="floating-btn whatsapp" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -501,5 +486,5 @@
 </script>
 
 </body>
- </html>
-                                                            
+         </html>
+         
