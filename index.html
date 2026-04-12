@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="شركة بس سكشن الهندسية - خدمات كهرباء ومقاولات وتركيب محولات ولوحات تحكم في السودان">
-  <meta name="keywords" content="كهرباء, محولات, لوحات تحكم, مقاولات, السودان, بس سكشن">
+  <meta name="description" content="شركة بس سكشن الهندسية - خدمات كهرباء ومقاولات واستيراد وتصدير في السودان">
+  <meta name="keywords" content="كهرباء, محولات, لوحات تحكم, مقاولات, السودان, بس سكشن, استيراد وتصدير">
 
   <title>شركة بس سكشن الهندسية المحدودة</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,6 +95,9 @@
       font-weight: bold;
       transition: var(--transition);
       font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
     .gold { background: var(--gold); color:var(--dark-blue); border: 2px solid var(--gold); }
     .gold:hover { background: transparent; color: var(--gold); }
@@ -122,7 +125,29 @@
       transform: translateX(-50%);
       border-radius: 2px;
     }
-    .section-p { max-width: 700px; margin: 0 auto 50px; color: var(--text-gray); font-size: 1.1rem; }
+    .section-p { max-width: 700px; margin: 0 auto 30px; color: var(--text-gray); font-size: 1.1rem; }
+
+    /* تنسيق زر تحميل الملف الشخصي */
+    .profile-download-area {
+      margin-top: 40px;
+      padding: 20px;
+      background: #e9ecef;
+      border-radius: 15px;
+      display: inline-block;
+    }
+    .btn-download {
+      background: var(--dark-blue);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: var(--transition);
+    }
+    .btn-download:hover {
+      background: var(--gold);
+      color: var(--dark-blue);
+    }
 
     .grid {
       display:grid;
@@ -270,6 +295,7 @@
       body { padding-top: 120px; }
       .contact-container { grid-template-columns: 1fr; }
       .map-container { min-height: 300px; }
+      .hero h1 { font-size: 2rem; }
     }
 
   </style>
@@ -293,7 +319,7 @@
   <p>التميز الحقيقي في الحلول الكهربائية والمقاولات</p>
   <div class="btn-group">
     <a href="#contact" class="btn gold">اطلب استشارة</a>
-    <a href="https://wa.me/249912724809" class="btn outline"><i class="fab fa-whatsapp"></i> واتساب الرسمي</a>
+    <a href="company-profile.pdf" class="btn outline" download><i class="fas fa-file-pdf"></i> الكتاب التعريفي</a>
   </div>
 </div>
 
@@ -304,7 +330,14 @@
     والمقاولات العامة، وأنظمة تحكم الطاقة، بخبرة واسعة وجودة عالمية تلبي طموحات واحتياجات السوق السوداني.
   </p>
   
-  <div class="grid">
+  <div class="profile-download-area">
+    <p style="margin-bottom: 15px; font-weight: 600;">تعرف علينا أكثر من خلال ملفنا التعريفي الشامل</p>
+    <a href="company-profile.pdf" class="btn-download" download>
+        <i class="fas fa-cloud-download-alt"></i> تحميل ملف الشركة (PDF)
+    </a>
+  </div>
+
+  <div class="grid" style="margin-top: 50px;">
     <div class="card why-us-card">
         <i class="fas fa-award"></i>
         <h3>خبرة هندسية عالية</h3>
@@ -339,14 +372,9 @@
         <p>تصميم وتجميع لوحات التوزيع والتحكم والتشغيل الآلي.</p>
     </div>
     <div class="card">
-        <i class="fas fa-gem"></i>
-        <h3>تعدين الذهب</h3>
-        <p>توفير الحلول الهندسية والكهربائية المتكاملة لمواقع التعدين ورفع كفاءة الإنتاج في مناطق السودان المختلفة.</p>
-    </div>
-    <div class="card">
-        <i class="fas fa-shipping-fast"></i>
+        <i class="fas fa-ship"></i>
         <h3>الاستيراد والتصدير</h3>
-        <p>حلول تجارية متكاملة لربط السوق المحلي بالأسواق العالمية وتوريد أجود المعدات.</p>
+        <p>حلول تجارية متكاملة لربط السوق المحلي بالأسواق العالمية، نؤمن من خلالها توريد أجود المنتجات وتصدير الموارد بأعلى معايير الكفاءة.</p>
     </div>
   </div>
 </div>
@@ -354,26 +382,11 @@
 <div class="section portfolio" id="projects">
   <h2>معرض المشاريع</h2>
   <div class="grid">
-    <div class="portfolio-item">
-        <img src="s1.jpg" alt="مشروع طاقة">
-        <div class="portfolio-overlay">محطة طاقة شمسية</div>
-    </div>
-    <div class="portfolio-item">
-        <img src="2.jpg" alt="مشروع كهرباء">
-        <div class="portfolio-overlay">مشروع كهرباء</div>
-    </div>
-    <div class="portfolio-item">
-        <img src="1.jpg" alt="صيانة محول">
-        <div class="portfolio-overlay">صيانة محولات</div>
-    </div>
-    <div class="portfolio-item">
-        <img src="gg.webp" alt="لوحات تحكم">
-        <div class="portfolio-overlay">لوحات تحكم</div>
-    </div>
-    <div class="portfolio-item">
-        <img src="m3.jpg" alt="تركيب لوحات">
-        <div class="portfolio-overlay">لوحات تحكم مركزية</div>
-    </div>
+    <div class="portfolio-item"><img src="s1.jpg" alt="مشروع طاقة"><div class="portfolio-overlay">محطة طاقة شمسية</div></div>
+    <div class="portfolio-item"><img src="2.jpg" alt="مشروع كهرباء"><div class="portfolio-overlay">مشروع كهرباء</div></div>
+    <div class="portfolio-item"><img src="1.jpg" alt="صيانة محول"><div class="portfolio-overlay">صيانة محولات</div></div>
+    <div class="portfolio-item"><img src="gg.webp" alt="لوحات تحكم"><div class="portfolio-overlay">لوحات تحكم</div></div>
+    <div class="portfolio-item"><img src="m3.jpg" alt="تركيب لوحات"><div class="portfolio-overlay">لوحات تحكم مركزية</div></div>
   </div>
 </div>
 
@@ -386,15 +399,10 @@
             <p><i class="fas fa-envelope"></i> <a href="mailto:Bussectioneng2021@gmail.com">Bussectioneng2021@gmail.com</a></p>
             <p><i class="fas fa-map-marker-alt"></i> الخرطوم - شارع الستين</p>
         </div>
-        
         <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.756184852!2d32.57!3d15.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTV_MzAnMDAuMCJOIDMyXzM0JzEyLjAiRQ!5e0!3m2!1sen!2ssd!4v1620000000000!5m2!1sen!2ssd" 
-                allowfullscreen="" loading="lazy">
-            </iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15377.6976214539!2d32.5694246!3d15.5153243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x168e9162484f10e1%3A0x9ff7099f3a687de7!2z2LTYp9ix2Lkg2KfZhNiz2KrZitmG2Iwg2KfZhNiu2LHYt9mI2YU!5e0!3m2!1sar!2ssd!4v1713500000000!5m2!1sar!2ssd" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
-
     <form action="https://formspree.io/f/mqaeavqj" method="POST">
         <input type="text" name="name" placeholder="الاسم الكامل" required>
         <input type="email" name="email" placeholder="البريد الإلكتروني" required>
@@ -404,19 +412,16 @@
   </div>
 </div>
 
-<a href="https://wa.me/249912724809" class="whatsapp" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
+<a href="https://wa.me/249912724809" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <footer>
   <p>© 2026 شركة بس سكشن الهندسية. جميع الحقوق محفوظة.</p>
   <div class="social-icons">
     <a href="https://www.facebook.com/wsl.tal2018" target="_blank"><i class="fab fa-facebook-f"></i></a>
     <a href="https://www.instagram.com/whitestar42?igsh=MWh6MmhuNGU2Y3d2ag==" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://x.com/Bussection2021" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
   </div>
 </footer>
 
 </body>
-   </html>
-   
+    </html>
+ 
