@@ -213,13 +213,49 @@
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      text-align: right;
-      align-items: start;
+      gap: 30px;
+      align-items: stretch;
     }
-    [dir="ltr"] .contact-container { text-align: left; }
 
-    .contact form { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-info { 
+      text-align: right; 
+      background: var(--dark-blue); 
+      color: white; 
+      padding: 30px; 
+      border-radius: 15px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .contact-info p { 
+      margin-bottom: 20px; 
+      font-size: 1rem; 
+      display: flex; 
+      align-items: center; 
+      gap: 15px; 
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 12px;
+    }
+    .contact-info p:last-child { border-bottom: none; margin-bottom: 0; }
+    .contact-info i { color: var(--gold); font-size: 1.2rem; width: 25px; text-align: center; }
+    .contact-info a { color: inherit; text-decoration: none; transition: var(--transition); }
+    .contact-info a:hover { color: var(--gold) !important; }
+
+    .map-container {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      flex-grow: 1;
+      min-height: 250px;
+    }
+    .map-container iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    .contact form { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; }
     .contact input, .contact textarea {
       width: 100%;
       padding: 15px;
@@ -228,7 +264,7 @@
       border-radius: 8px;
       font-family: 'Cairo', sans-serif;
     }
-    .contact textarea { height: 150px; resize: none; }
+    .contact textarea { height: 160px; resize: none; }
 
     .btn-send {
       background: var(--dark-blue);
@@ -243,9 +279,7 @@
       font-size: 1.1rem;
       transition: var(--transition);
     }
-
-    .map-container { border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; min-height: 400px; }
-    .map-container iframe { border: 0; width: 100%; height: 100%; }
+    .btn-send:hover { background: var(--gold); color: var(--dark-blue); }
 
     .floating-btn {
       position: fixed;
@@ -283,8 +317,8 @@
     }
 
     @media (max-width: 768px) {
-      body { padding-top: 120px; }
       .contact-container { grid-template-columns: 1fr; }
+      .contact-info { text-align: right; }
       .map-container { min-height: 300px; }
     }
 
@@ -325,10 +359,10 @@
 <div class="section" id="about">
   <h2 class="lang-text" data-ar="من نحن" data-en="About Us">من نحن</h2>
   <p class="section-p lang-text" 
-     data-ar="شركة بس سكشن الهندسية المحدودة هي شركة رائدة ومتخصصة في تقديم الحلول الكهربائية المتكاملة، والمقاولات العامة، وأنظمة تحكم الطاقة، بخبرة واسعة وجودة عالمية تلبي طموحات واحتياجات السوق السوداني."
+     data-ar="شركة بس سكشن الهندسية المحدودة هي شركة رائدة ومتخصصة في تقديم الحلول الكهربائية المتكاملة، والمقاولات العامة، وأنظمة تحكم الطاقة، بخبرة واسعة وجودة عالمية تلبي طموحات وااحتياجات السوق السوداني."
      data-en="Bus Section Engineering Co. Ltd. is a leading company specialized in providing integrated electrical solutions, general contracting, and power control systems in Sudan.">
     شركة بس سكشن الهندسية المحدودة هي شركة رائدة ومتخصصة في تقديم الحلول الكهربائية المتكاملة، 
-    والمقاولات العامة، وأنظمة تحكم الطاقة، بخبرة واسعة وجودة عالمية تلبي طموحات واحتياجات السوق السوداني.
+    والمقاولات العامة، وأنظمة تحكم الطاقة، بخبرة واسعة وجودة عالمية تلبي طموحات وااحتياجات السوق السوداني.
   </p>
   
   <div class="grid">
@@ -407,22 +441,26 @@
 <div class="section contact" id="contact" style="background-color: var(--white);">
   <h2 class="lang-text" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h2>
   <div class="contact-container">
-    <div>
+    
+    <div class="contact-sidebar">
         <div class="contact-info">
             <p><i class="fas fa-phone-alt"></i> <a href="tel:+249115798781" dir="ltr">+249115798781</a></p>
             <p><i class="fas fa-envelope"></i> <a href="mailto:Bussectioneng2021@gmail.com">Bussectioneng2021@gmail.com</a></p>
             <p><i class="fas fa-map-marker-alt"></i> <span class="lang-text" data-ar="الخرطوم - شارع الستين" data-en="Khartoum - 60th St.">الخرطوم - شارع الستين</span></p>
+            <p><i class="fas fa-clock"></i> <span class="lang-text" data-ar="8:00 صباحاً - 4:00 مساءً" data-en="8:00 AM - 4:00 PM">8:00 صباحاً - 4:00 مساءً</span></p>
         </div>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3844.026725203387!2d32.583321575124975!3d15.536214585068413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTXCsDMyJzEwLjQiTiAzMsKwMzUnMDkuMiJF!5e0!3m2!1sar!2s!4v1714150534579!5m2!1sar!2s" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.7573030230283!2d32.585542!3d15.54845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTV_MzInNTQuNCJOIDMywrAzNScwNy45IkU!5e0!3m2!1sar!2ssd!4v1712950000000!5m2!1sar!2ssd" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
+
     <form action="https://formspree.io/f/mqaeavqj" method="POST">
         <input type="text" name="name" class="lang-input" data-ar="الاسم الكامل" data-en="Full Name" placeholder="الاسم الكامل" required>
         <input type="email" name="email" class="lang-input" data-ar="البريد الإلكتروني" data-en="Email Address" placeholder="البريد الإلكتروني" required>
         <textarea name="message" class="lang-input" data-ar="تفاصيل الرسالة..." data-en="Message Details..." placeholder="تفاصيل الرسالة..." required></textarea>
         <button type="submit" class="btn-send lang-text" data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</button>
     </form>
+
   </div>
 </div>
 
@@ -433,7 +471,7 @@
   <p class="lang-text" data-ar="© 2026 شركة بس سكشن الهندسية. جميع الحقوق محفوظة." data-en="© 2026 Bus Section Engineering. All Rights Reserved.">© 2026 شركة بس سكشن الهندسية. جميع الحقوق محفوظة.</p>
   <div class="social-icons">
     <a href="https://www.facebook.com/wsl.tal2018" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="https://www.instagram.com/whitestar42?igsh=MWh6MmhuNGU2Y3d2ag==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.instagram.com/whitestar42" target="_blank"><i class="fa-brands fa-instagram"></i></a>
     <a href="https://x.com/Bussection2021" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
   </div>
 </footer>
@@ -463,5 +501,5 @@
   }
 </script>
 </body>
- </html>
- 
+   </html>
+   
